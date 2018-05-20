@@ -51,7 +51,7 @@ void Coordinate::set_Point(char other){
     throw IllegalCharException(other);
     this->p = other;
 }
-void Coordinate::setCoordinate(Coordinate o) {
+void Coordinate::setNewCoordinate(Coordinate o) {
     index_i = o.index_i;
     index_j = o.index_j;
 }
