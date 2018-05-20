@@ -13,8 +13,6 @@ class Coordinate {
         int index_j;
 
     public:
-       // int index_i;
-       // int index_j;
         Coordinate();
         Coordinate(char Char);
         Coordinate(uint i,uint j);
@@ -26,8 +24,8 @@ class Coordinate {
         operator char();
     int const getIndexI()const {return index_i;}
     int const getIndexJ()const{return index_j;}
-      void setIndexI(uint x) { index_i=x;}
-    void setIndexJ(uint y) { index_j=y;}
+   //   void setIndexI(uint x) { index_i=x;}
+   // void setIndexJ(uint y) { index_j=y;}
       void setCoordinate(Coordinate c);
 
   
