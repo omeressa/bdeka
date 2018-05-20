@@ -2,7 +2,7 @@
 #pragma once
 #include "Board.h"
 #include <string>
-#include <IllegalCharException.h>
+#include <exception>
 
 
 class Player
