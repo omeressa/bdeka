@@ -30,7 +30,7 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
             champion = &oPlayer; return;
         }
 
-        if(checkWinner('X')) {
+        if(isWinner('X')) {
             champion = &xPlayer; return;
         }
         count++;
@@ -47,7 +47,7 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
                 champion = &xPlayer; return;
             }
 
-            if(checkWinner('O')) {
+            if(isWinner('O')) {
                 champion= &oPlayer; return;
             }
         }
