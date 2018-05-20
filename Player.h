@@ -19,10 +19,10 @@ public:
             throw IllegalCharException(c);
         }
     }
-    void setMyChar(char c) {
+    void setChar(char c) {
         myChar = c;
     }
-    char getMyChar(){
+    char getChar(){
         return myChar;
     }
     
