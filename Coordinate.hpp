@@ -23,6 +23,6 @@ class Coordinate {
         operator char();
         int const getIndexI()const {return index_i;}
         int const getIndexJ()const{return index_j;}
-        void setCoordinate(Coordinate c);
+        void setNewCoordinate(Coordinate c);
         friend ostream& operator<< (ostream& , const Coordinate&);
    };
