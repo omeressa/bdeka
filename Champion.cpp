@@ -6,7 +6,7 @@ const Coordinate Champion::play(const Board& board) {
         Coordinate c{t,i};
         t = board.size()-1;
         if(i==1 && board[{0,t}] == '.'){
-            c.setRow(0); c.setCol(board.size()-1);
+            c.setIndexI(0); c.setIndexJ(board.size()-1);
         }
         if(board[c]=='.') {
             return c;
