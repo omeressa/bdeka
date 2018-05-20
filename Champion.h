@@ -10,5 +10,5 @@ public:
          const Coordinate play(const Board& board) override ;
          */
         virtual const string name()const{return "omar";}
-        virtual const Coordinate play(const Board& board) override;}
+        virtual const Coordinate play(const Board& board) override;
 };
