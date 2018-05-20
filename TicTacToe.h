@@ -8,12 +8,10 @@ public:
     Board game;
     int sizeOfBoard;
     Player* champion;
-
-public:
     TicTacToe(int sizeOfBoard);
+    void play(Player& xPlayer, Player& oPlayer);
+    bool isWinner(char c);
     Board board() const;
     Player& winner() const;
-    void play(Player& xPlayer, Player& oPlayer);
-    bool checkWinner(char c);
 
 };
