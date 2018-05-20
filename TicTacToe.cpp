@@ -7,14 +7,6 @@ TicTacToe::TicTacToe(int sizeOfBoard):game(sizeOfBoard){
     this->sizeOfBoard=sizeOfBoard;
 }
 
-Board TicTacToe::board() const
-{
-    return game;
-}
-Player& TicTacToe::winner() const
-{
-    return *champion;
-}
 
 void TicTacToe::play(Player &xPlayer, Player &oPlayer)
 {
@@ -62,7 +54,7 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
     }
     champion = &oPlayer;
 }
-bool TicTacToe::checkWinner(char c)
+bool TicTacToe::isWinner(char c)
 {
     bool winning = true;
 
@@ -111,3 +103,14 @@ bool TicTacToe::checkWinner(char c)
     }
     return winning;
 }
+
+/*
+Board TicTacToe::board() const{
+    return game;
+}
+
+
+Player& TicTacToe::winner() const
+{
+    return *champion;
+}*/
