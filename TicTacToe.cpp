@@ -2,26 +2,27 @@
 
 #include "TicTacToe.h"
 #include <string>
+/**
+*function to give the size of the game board
+**/
+TicTacToe::TicTacToe(int sizeOfBoard):game(sizeOfBoard){this->sizeOfBoard=sizeOfBoard;}
 
-TicTacToe::TicTacToe(int sizeOfBoard):game(sizeOfBoard){
-    this->sizeOfBoard=sizeOfBoard;
-}
-
-
-void TicTacToe::play(Player &xPlayer, Player &oPlayer)
-{
-    this->game ='.'; // initial empty board
-    int s = sizeOfBoard*sizeOfBoard;
+/**
+*function to start the game
+**/
+void TicTacToe::play(Player &xPlayer, Player &oPlayer){
+    this->game ='.';
+    int size = sizeOfBoard*sizeOfBoard;
     int count = 0;
     xPlayer.setChar('X');
     oPlayer.setChar('O');
-    Coordinate c(0,0);
-    while(count < s){
+    Coordinate temp(0,0);
+    while(count < size){
         count++;
         try{
-            c.setCoordinate(xPlayer.play(game));
-            if(game[c]=='.')
-                game[c] = xPlayer.getChar();
+            temp.setCoordinate(xPlayer.play(game));
+            if(game[temp]=='.')
+                game[temp] = xPlayer.getChar();
             else{
                 champion = &oPlayer; return;
             }
@@ -34,11 +35,11 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
             champion = &xPlayer; return;
         }
         count++;
-        if(count < s){
+        if(count < size){
             try{
-                c.setCoordinate(oPlayer.play(game));
-                if(game[c]=='.')
-                    game[c] = oPlayer.getChar();
+                temp.setCoordinate(oPlayer.play(game));
+                if(game[temp]=='.')
+                    game[temp] = oPlayer.getChar();
                 else{
                     champion = &xPlayer; return;
                 }
@@ -54,63 +55,54 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
     }
     champion = &oPlayer;
 }
+
+/**
+*bool function to check if the player won or not
+**/
 bool TicTacToe::isWinner(char c)
 {
-    bool winning = true;
+    bool ans = true;
 
-    for(uint i = 0; i< sizeOfBoard ; i++)
-    {
-        winning = true;
-        for(uint j = 0; j<sizeOfBoard ; j++)
-        {
+    for(uint i = 0; i< sizeOfBoard ; i++){
+        ans = true;
+        //op 1
+        for(uint j = 0; j<sizeOfBoard ; j++){
             if(game[{i,j}] != c){
-                winning = false;
+                ans = false;
                 break;
             }
         }
-        if(winning)
+        if(ans)
             return true;
-
-        winning = true;
-        for(uint j = 0; j<sizeOfBoard ; j++)
-        {
+        ans = true;
+        //op 2
+        for(uint j = 0; j<sizeOfBoard ; j++){
             if(game[{j,i}] != c){
-                winning = false;
+                ans = false;
                 break;
             }
         }
-        if(winning)
+        if(ans)
             return true;
     }
-
-    winning = true;
-    for(uint i = 0; i<sizeOfBoard ; i++)
-    {
+    ans = true;
+    //op 3
+    for(uint i = 0; i<sizeOfBoard ; i++){
         if(game[{i,i}] != c){
-            winning = false;
+            ans = false;
             break;
         }
     }
-    if(winning)
+    if(ans)
         return true;
-    winning = true;
-    for(uint i = 0; i<sizeOfBoard ; i++)
-    {
+    ans = true;
+    //op 4
+    for(uint i = 0; i<sizeOfBoard ; i++){
         if(game[{sizeOfBoard-i-1,i}] != c){
-            winning = false;
+            ans = false;
             break;
         }
     }
-    return winning;
+    return ans;
 }
 
-/*
-Board TicTacToe::board() const{
-    return game;
-}
-
-
-Player& TicTacToe::winner() const
-{
-    return *champion;
-}*/
