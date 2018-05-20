@@ -21,15 +21,15 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
     this->game ='.'; // initial empty board
     int s = _size*_size;
     int count = 0;
-    xPlayer.setMyChar('X');
-    oPlayer.setMyChar('O');
+    xPlayer.setChar('X');
+    oPlayer.setChar('O');
     Coordinate c(0,0);
     while(count < s){
         count++;
         try{
             c.setCoordinate(xPlayer.play(game));
             if(game[c]=='.')
-                game[c] = xPlayer.getMyChar();
+                game[c] = xPlayer.getChar();
             else{
                 champion = &oPlayer; return;
             }
@@ -46,7 +46,7 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
             try{
                 c.setCoordinate(oPlayer.play(game));
                 if(game[c]=='.')
-                    game[c] = oPlayer.getMyChar();
+                    game[c] = oPlayer.getChar();
                 else{
                     champion = &xPlayer; return;
                 }
