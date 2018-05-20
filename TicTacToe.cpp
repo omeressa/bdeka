@@ -21,8 +21,8 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
     this->game ='.'; // initial empty board
     int s = _size*_size;
     int count = 0;
-    xPlayer.setChar('X');
-    oPlayer.setChar('O');
+    xPlayer.setMyChar('X');
+    oPlayer.setMyChar('O');
     Coordinate c(0,0);
     while(count < s){
         count++;
