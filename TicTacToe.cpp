@@ -20,7 +20,7 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer){
     while(count < size){
         count++;
         try{
-            temp.setCoordinate(xPlayer.play(game));
+            temp.setNewCoordinate(xPlayer.play(game));
             if(game[temp]=='.')
                 game[temp] = xPlayer.getChar();
             else{
@@ -37,7 +37,7 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer){
         count++;
         if(count < size){
             try{
-                temp.setCoordinate(oPlayer.play(game));
+                temp.setNewCoordinate(oPlayer.play(game));
                 if(game[temp]=='.')
                     game[temp] = oPlayer.getChar();
                 else{
