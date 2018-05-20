@@ -28,6 +28,8 @@ class Coordinate {
     int const getIndexJ()const{return index_j;}
       void setIndexI(uint x) { index_i=x;}
     void setIndexJ(uint y) { index_j=y;}
+      void setCoordinate(Coordinate c);
+
   
 friend ostream& operator<< (ostream& , const Coordinate&);
   
