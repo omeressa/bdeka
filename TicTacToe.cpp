@@ -3,7 +3,7 @@
 #include "TicTacToe.h"
 #include <string>
 
-TicTacToe::TicTacToe(int n):game(sizeOfBoard){
+TicTacToe::TicTacToe(int sizeOfBoard):game(sizeOfBoard){
     this->sizeOfBoard=sizeOfBoard;
 }
 
