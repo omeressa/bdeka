@@ -22,8 +22,8 @@ class Coordinate {
         void set_Point(char c);
         char get_Point();
         operator char();
-    int const getIndexI()const {return index_i;}
-    int const getIndexJ()const{return index_j;}
+  //  int const getIndexI()const {return index_i;}
+   // int const getIndexJ()const{return index_j;}
    //   void setIndexI(uint x) { index_i=x;}
    // void setIndexJ(uint y) { index_j=y;}
       void setCoordinate(Coordinate c);
