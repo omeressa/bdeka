@@ -6,11 +6,11 @@
 class TicTacToe{
 public:
     Board game;
-    int _size;
-    Player* champion; // the winner
+    int sizeOfBoard;
+    Player* champion;
 
 public:
-    TicTacToe(int n);
+    TicTacToe(int sizeOfBoard);
     Board board() const;
     Player& winner() const;
     void play(Player& xPlayer, Player& oPlayer);
