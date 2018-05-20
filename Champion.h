@@ -5,8 +5,10 @@
 class Champion : public Player
 {
 public:
-    const Coordinate play(const Board& board) override ;
-    const string name() const override {
-        return "OMAR";
-    };
+/*
+         const string name() const override {return "OMAR";};
+         const Coordinate play(const Board& board) override ;
+         */
+        virtual const string name()const{return "omar";}
+        virtual const Coordinate play(const Board& board) override;}
 };
