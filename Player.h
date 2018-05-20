@@ -2,6 +2,8 @@
 #pragma once
 #include "Board.h"
 #include <string>
+#include <exception>
+
 
 class Player
 {
