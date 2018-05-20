@@ -11,7 +11,7 @@ class Player
 public:
     char myChar;
     
-    Player(){}
+   // Player(){}
     Player(char c){
         if (c=='O' || c== 'X')
             myChar=c;
