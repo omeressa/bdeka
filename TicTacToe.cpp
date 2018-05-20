@@ -29,7 +29,7 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
         try{
             c.setCoordinate(xPlayer.play(game));
             if(game[c]=='.')
-                game[c] = xPlayer.getChar();
+                game[c] = xPlayer.getMyChar();
             else{
                 champion = &oPlayer; return;
             }
@@ -46,7 +46,7 @@ void TicTacToe::play(Player &xPlayer, Player &oPlayer)
             try{
                 c.setCoordinate(oPlayer.play(game));
                 if(game[c]=='.')
-                    game[c] = oPlayer.getChar();
+                    game[c] = oPlayer.getMyChar();
                 else{
                     champion = &xPlayer; return;
                 }
