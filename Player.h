@@ -15,9 +15,12 @@ public:
         if (c=='O' || c== 'X')
             myChar=c;
         else{
+            throw IllegalCharException(c);
+
+            /*
             IllegalCharException ex;
             ex.setInput(c);
-            throw ex;
+            throw ex;*/
         }
     }
     void setChar(char c) {myChar = c;}
