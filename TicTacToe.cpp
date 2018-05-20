@@ -92,7 +92,7 @@ bool TicTacToe::checkWinner(char c)
     }
 
     winning = true;
-    for(uint i = 0; i<_size ; i++)
+    for(uint i = 0; i<sizeOfBoard ; i++)
     {
         if(game[{i,i}] != c){
             winning = false;
