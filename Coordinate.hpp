@@ -26,6 +26,8 @@ class Coordinate {
         operator char();
     int const getIndexI()const {return index_i;}
     int const getIndexJ()const{return index_j;}
+      void setIndexI(uint x) { index_i=x;}
+    void setIndexJ(uint y) { index_j=y;}
   
 friend ostream& operator<< (ostream& , const Coordinate&);
   
